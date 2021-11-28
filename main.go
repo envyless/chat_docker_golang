@@ -4,10 +4,13 @@ package main
 // go get
 
 import (
+	"os"
+
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	port := os.Getenv("PORT")
 	go h.run()
 
 	router := gin.New()
@@ -22,5 +25,5 @@ func main() {
 		serveWs(c.Writer, c.Request, roomId)
 	})
 
-	router.Run("0.0.0.0:3000")
+	router.Run(":" + port)
 }

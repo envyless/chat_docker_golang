@@ -1,5 +1,8 @@
 package main
 
+// go get -u github.com/gin-gonic/gin
+// go get
+
 import (
 	"github.com/gin-gonic/gin"
 )
@@ -19,5 +22,5 @@ func main() {
 		serveWs(c.Writer, c.Request, roomId)
 	})
 
-	router.Run("0.0.0.0:8080")
+	router.Run("0.0.0.0:3000")
 }
